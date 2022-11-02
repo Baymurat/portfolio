@@ -1,14 +1,14 @@
-import React from 'react'
-import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import BackgroundCircles from './BackgroundCircles';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import BackgroundCircles from "./BackgroundCircles";
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {}
 
 const Hero = (props: Props) => {
   const [text, count] = useTypewriter({
-    words: ['Developer', 'Designer', 'Creator'],
+    words: ["Developer", "Designer", "Creator"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -16,9 +16,9 @@ const Hero = (props: Props) => {
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles />
-      <img 
+      <img
         className='realtive rounded-full w-32 h32 mx-auto object-cover'
-        src="/image.png" 
+        src="/image.png"
         alt="image"
       />
       <div className='z-20'>
@@ -42,14 +42,11 @@ const Hero = (props: Props) => {
             <button className='heroButton'>Projects</button>
           </Link>
 
-          
-          
-          
-          
+
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

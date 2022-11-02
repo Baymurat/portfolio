@@ -1,6 +1,6 @@
-import React from 'react';
-import { SocialIcon } from 'react-social-icons';
-import { motion } from 'framer-motion';
+import React from "react";
+import { SocialIcon } from "react-social-icons";
+import { motion } from "framer-motion";
 
 type Props = {}
 
@@ -22,15 +22,15 @@ function Header({}: Props) {
           duration: 1.5
         }}
         className='flex flex-row items-center'>
-          <SocialIcon 
+        <SocialIcon
           url='https://twitter.com/jaketrent'
           fgColor='gray'
           bgColor='transparent' />
-          <SocialIcon 
+        <SocialIcon
           url='https://twitter.com/jaketrent'
           fgColor='gray'
           bgColor='transparent' />
-          <SocialIcon 
+        <SocialIcon
           url='https://twitter.com/jaketrent'
           fgColor='gray'
           bgColor='transparent' />
@@ -49,16 +49,16 @@ function Header({}: Props) {
         }}
         transition={{ duration: 1.5 }}
         className='flex flex-row items-center text-gray-500 cursor-pointer'>
-          <SocialIcon
-            className='cursor-pointer'
-            network='email'
-            fgColor='gray'
-            bgColor='transparent'
-          />
-          <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>Get In Touch</p>
+        <SocialIcon
+          className='cursor-pointer'
+          network='email'
+          fgColor='gray'
+          bgColor='transparent'
+        />
+        <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>Get In Touch</p>
       </motion.div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
