@@ -38,7 +38,7 @@ const Home = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <Header />
+    <Header socials={socials} />
 
     <section id='hero' className='snap-start'>
       <Hero />
