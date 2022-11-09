@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
-type Props = {}
+import { Skill as SkillType } from "../typings";
+type Props = {
+  skills: SkillType[];
+}
 
-function Skills({}: Props) {
+function Skills({ skills }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,14 +23,27 @@ function Skills({}: Props) {
       </h3>
 
       <div className='grid grid-cols-4 gap-5'>
-        <Skill level={80} src="images/javascript-logo.png" directionLeft />
+        {skills.slice(0, skills.length / 2).map((skill) => (
+          <Skill
+            key={skill._id}
+            skill={skill}
+          />
+        ))}
+        {skills.slice(skills.length / 2, skills.length).map((skill) => (
+          <Skill
+            key={skill._id}
+            skill={skill}
+            directionLeft
+          />
+        ))}
+        {/* <Skill level={80} src="images/javascript-logo.png" directionLeft />
         <Skill level={90} src="images/html5-logo.png" directionLeft />
         <Skill level={80} src="images/css-logo.png" directionLeft />
         <Skill level={70} src="images/react-logo.png" directionLeft />
         <Skill level={70} src="images/node-logo.png" />
         <Skill level={90} src="images/typescript-logo.png" />
         <Skill level={60} src="images/redux-logo.png" />
-        <Skill level={60} src="images/git-logo.png" />
+        <Skill level={60} src="images/git-logo.png" /> */}
       </div>
     </motion.div>
   );
