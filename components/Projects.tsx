@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-type Props = {}
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-const projects = [1, 2, 3 ,4];
+type Props = {
+  projects: Project[];
+}
 
-function Projects({}: Props) {
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,7 +32,8 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="images/band.jpg"
+              // src="images/band.jpg"
+              src={urlFor(project.image).url()}
               alt="band"
             />
 
@@ -38,13 +42,21 @@ function Projects({}: Props) {
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case Study {index + 1} of {projects.length}
                 </span>{" "}
-                UPS clone
+                {project.title}
               </h4>
 
+              <div className="flex items-center space-x-2 justify-center">
+                {project.technologies.map((technology) => (
+                  <img
+                    className="h-10 w-10"
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt=""
+                  />
+                ))}
+              </div>
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio illo fugiat amet soluta,
-                laborum obcaecati sequi maiores, voluptatem rem impedit adipisci. Accusamus sunt magni
-                inventore! Cupiditate voluptatem enim animi aliquam!
+                {project.summary}
               </p>
             </div>
           </div>
