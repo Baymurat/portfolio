@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Experience } from "../typings";
 import { urlFor } from "../sanity";
 
@@ -22,13 +21,12 @@ function ExperienceCard({ experience }: Props) {
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
         className='w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center'
-        src="image.png"
-        // src={urlFor(experience?.companyImage).url()}
+        src={urlFor(experience?.companyImage).url()}
         alt="image"
       />
       <div className='px-0 md:px-10'>
-        <h4 className='text-4xl font-light'>Some header text</h4>
-        <p className='font-bold text-2xl mt-1'>Some paragraph text</p>
+        <h4 className='text-4xl font-light'>{experience?.company}</h4>
+        <p className='font-bold text-2xl mt-1'>{experience?.jobTitle}</p>
         <div className='flex space-x-2 my-2'>
           {experience?.technologies.map((technology) => (
             <img
@@ -37,30 +35,6 @@ function ExperienceCard({ experience }: Props) {
               src={urlFor(technology.image).url()}
             />
           ))}
-          {/* <div className='h-10 w-16 rounded-full relative' >
-            <Image
-              layout='fill'
-              objectFit='contain'
-              src="/images/javascript-logo.png"
-              alt="javascript-logo"
-            />
-          </div>
-          <div className='h-10 w-16 rounded-full relative' >
-            <Image
-              layout='fill'
-              objectFit='contain'
-              src="/images/javascript-logo.png"
-              alt="javascript-logo"
-            />
-          </div>
-          <div className='h-10 w-16 rounded-full relative' >
-            <Image
-              layout='fill'
-              objectFit='contain'
-              src="/images/javascript-logo.png"
-              alt="javascript-logo"
-            />
-          </div> */}
         </div>
         <p className='uppercase py-5 text-gray-300'>
           {new Date(experience?.dateStarted).toDateString()} -{" "}
@@ -74,11 +48,6 @@ function ExperienceCard({ experience }: Props) {
           {experience?.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
-          {/* <li>Summary points Summary points Summary points </li>
-          <li>Summary points Summary points Summary points </li>
-          <li>Summary points Summary points Summary points </li>
-          <li>Summary points Summary points Summary points </li>
-          <li>Summary points Summary points Summary points </li> */}
         </ul>
       </div>
     </article>

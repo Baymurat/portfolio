@@ -36,14 +36,6 @@ function Skills({ skills }: Props) {
             directionLeft
           />
         ))}
-        {/* <Skill level={80} src="images/javascript-logo.png" directionLeft />
-        <Skill level={90} src="images/html5-logo.png" directionLeft />
-        <Skill level={80} src="images/css-logo.png" directionLeft />
-        <Skill level={70} src="images/react-logo.png" directionLeft />
-        <Skill level={70} src="images/node-logo.png" />
-        <Skill level={90} src="images/typescript-logo.png" />
-        <Skill level={60} src="images/redux-logo.png" />
-        <Skill level={60} src="images/git-logo.png" /> */}
       </div>
     </motion.div>
   );
