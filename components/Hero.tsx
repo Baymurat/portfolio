@@ -25,9 +25,8 @@ const Hero = ({ pageInfo }: Props) => {
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
       <BackgroundCircles />
       <img
-        className='realtive rounded-full w-32 h32 mx-auto object-cover'
-        src="/image.png"
-        // src={urlFor(pageInfo?.heroImage).url()}
+        className='realtive rounded-full w-32 h-32 mx-auto object-cover'
+        src={urlFor(pageInfo?.heroImage).url()}
         alt="image"
       />
       <div className='z-20'>
